@@ -15,6 +15,7 @@ import com.kama.notes.utils.SecurityUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -37,6 +38,7 @@ public class MessageServiceImpl implements MessageService {
     @Autowired
     private RequestScopeData requestScopeData;
 
+    @Async
     @Override
     public Integer createMessage(MessageDTO messageDTO) {
         try {
